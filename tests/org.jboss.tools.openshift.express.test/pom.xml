@@ -12,4 +12,20 @@
 	     then change this to packaging=eclipse-test-plugin to make Tycho RUN the tests rather than just 
 	     compiling sources -->
 	<packaging>eclipse-test-plugin</packaging>
+	<build>
+	  <plugins>
+            <plugin>
+              <groupId>org.eclipse.tycho</groupId>
+              <artifactId>tycho-surefire-plugin</artifactId>
+              <configuration>
+                  <includes>
+                    <include>**/*Test.class</include>
+                  </includes>
+                  <excludes>
+                    <exclude>**/*Suite.class</exclude>
+                  </excludes>
+                </configuration>
+              </plugin>	
+	  </plugins>
+	</build>
 </project>
